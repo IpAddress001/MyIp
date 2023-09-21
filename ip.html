@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP</title>
+</head>
+<body>
+    <p id="ip"></p>
+    <script>
+        fetch('https://api64.ipify.org/?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = data.ip;
+            });
+    </script>
+</body>
+</html>
