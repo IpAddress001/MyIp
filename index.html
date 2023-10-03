@@ -12,5 +12,20 @@
                 document.getElementById('ip').textContent = data.ip;
             });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  // Obtener la dirección IP del visitante
+  $.get("https://ipinfo.io", function(response) {
+    var ip = response.ip;
+    var location = response.city + ", " + response.region + ", " + response.country;
+    
+    // Ahora puedes enviar la dirección IP y la ubicación a tu servidor o a una herramienta de análisis.
+    // Puedes utilizar AJAX para enviar estos datos a tu servidor o almacenarlos localmente en una base de datos.
+
+    console.log("IP: " + ip);
+    console.log("Ubicación: " + location);
+  }, "jsonp");
+</script>
+
 </body>
 </html>
